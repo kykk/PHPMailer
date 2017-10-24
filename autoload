@@ -1,0 +1,25 @@
+<?php
+require 'PHPMailer/PHPMailerAutoload.php';
+$mail = new PHPMailer();
+$mail->Host='smtp.gmail.com';
+$mail->SMTPAuth='true';
+$mail->Username='gauravroy198@gmail.com';
+$mail->Password='temp()password';
+$mail->SMPTSecure='tls';
+$mail->Port=587;
+
+$mail->SetForm('classic.gaurav01@gmail.com', 'Developer');
+$mail->addAddress('gauravroy198@gmail');
+$mail->addReplyTo('gauravroy198@gmail');
+$mail->Subject='U-tube';
+$mail->Body='sample';
+if($mail->send())
+{
+	echo'Mail Sent';
+}
+else
+{
+	echo'Mail not sent';
+}
+
+?>
